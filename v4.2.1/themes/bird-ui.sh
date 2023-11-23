@@ -32,8 +32,8 @@ echo -e "@import 'mastodon-light/variables';\n@import 'application';\n@import 'm
 # Create dark theme file
 echo -e "@import 'application';\n@import 'mastodon-bird-ui/layout-single-column.scss';\n@import 'mastodon-bird-ui/layout-multiple-columns.scss';" > /opt/mastodon/app/javascript/styles/mastodon-bird-ui-dark.scss
 
-# Overwrite config/themes.yml with new settings, Mastodon Bird UI dark as default
-echo -e "default: styles/mastodon-bird-ui-dark.scss\nmastodon-bird-ui-light: styles/mastodon-bird-ui-light.scss\nmastodon-bird-ui-contrast: styles/mastodon-bird-ui-contrast.scss\nmastodon-dark: styles/application.scss\nmastodon-light: styles/mastodon-light.scss\ncontrast: styles/contrast.scss" > /opt/mastodon/config/themes.yml
+# Write config into themes.yml
+echo -e "mastodon-bird-ui-dark: styles/mastodon-bird-ui-dark.scss\nmastodon-bird-ui-light: styles/mastodon-bird-ui-light.scss\nmastodon-bird-ui-contrast: styles/mastodon-bird-ui-contrast.scss" >> /opt/mastodon/config/themes.yml
 
 # Add i18n 
 # ref: https://github.com/wxwmoe/mastodon
