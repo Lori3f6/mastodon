@@ -1,8 +1,8 @@
 # ref: https://github.com/wxwmoe/mastodon
 # content length limit 500 -> 2500:
-sed -i "s|MAX_CHARS = 500|MAX_CHARS = 2500|" /opt/mastodon/app/validators/status_length_validator.rb
-sed -i "s|length(fulltext) > 500|length(fulltext) > 2500|" /opt/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx
-sed -i "s|CharacterCounter max={500}|CharacterCounter max={2500}|" /opt/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx
+sed -i "s|MAX_CHARS = 500|MAX_CHARS = 2600|" /opt/mastodon/app/validators/status_length_validator.rb
+sed -i "s|length(fulltext) > 500|length(fulltext) > 2600|" /opt/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx
+sed -i "s|CharacterCounter max={500}|CharacterCounter max={2600}|" /opt/mastodon/app/javascript/mastodon/features/compose/components/compose_form.jsx
 
 # For attachment resizing, it has been removed from client side.
 # Mastodon v4.2.0 has changed the media size limit to a relatively adequate limit as:
