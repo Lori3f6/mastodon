@@ -71,7 +71,7 @@ services:
       - sidekiq
       - streaming
     volumes:
-    - ./webroot/system:/mastodon/public/system
+    - ./tootdata/system:/mastodon/public/system
 
   sidekiq:
     restart: always
@@ -87,7 +87,7 @@ services:
       - pg16
       - redis
     volumes:
-      - ./webroot/system:/mastodon/public/system
+      - ./tootdata/system:/mastodon/public/system
 
   streaming:
     restart: always
