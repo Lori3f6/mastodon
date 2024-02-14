@@ -1,4 +1,4 @@
-FROM tootsuite/mastodon:v4.2.5
+FROM tootsuite/mastodon:v4.2.6
 ENV MASTODON_VERSION_METADATA yai
 
 COPY ./patch.sh /opt/patch/patch.sh
