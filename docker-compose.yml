@@ -1,7 +1,7 @@
 services:
   pg16:
     restart: always
-    image: postgres:16.1-alpine3.18
+    image: postgres:16.2-alpine3.19
     hostname: mst-pg16
     shm_size: 256mb
     networks:
@@ -16,7 +16,7 @@ services:
 
   redis:
     restart: always
-    image: redis:7.2.3-alpine3.18
+    image: redis:7.2.4-alpine3.19
     hostname: mst-redis
     networks:
       - internal
@@ -27,7 +27,7 @@ services:
 
   esearch:
     restart: always
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1-arm64
+    image: elasticsearch:8.13.0
     hostname: mst-esearch
     environment:
       - "ES_JAVA_OPTS=-Xms4096m -Xmx4096m -Des.enforce.bootstrap.checks=true"
@@ -56,7 +56,7 @@ services:
 
   web:
     restart: always
-    image: tootsuite/mastodon:v4.2.7-yai
+    image: tootsuite/mastodon:v4.2.8-yai
     hostname: mst-web
     env_file: env_settings
     command: bash -c "rm -f /mastodon/tmp/pids/server.pid; bundle exec rails s -p 3000"
@@ -75,7 +75,7 @@ services:
 
   sidekiq:
     restart: always
-    image: tootsuite/mastodon:v4.2.7-yai
+    image: tootsuite/mastodon:v4.2.8-yai
     hostname: mst-sidekiq
     env_file: env_settings
     command: bundle exec sidekiq
@@ -91,7 +91,7 @@ services:
 
   streaming:
     restart: always
-    image: tootsuite/mastodon:v4.2.7-yai
+    image: tootsuite/mastodon:v4.2.8-yai
     hostname: mst-streaming
     env_file: env_settings
     command: node ./streaming
@@ -104,7 +104,7 @@ services:
       - redis
 
   nginx:
-    image: nginx:1.25.3-alpine
+    image: nginx:1.25.5-alpine3.19
     restart: always
     networks:
       - internal
