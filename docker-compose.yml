@@ -1,3 +1,4 @@
+version: '3.8'
 services:
   pg16:
     restart: always
@@ -120,3 +121,6 @@ services:
 
 networks:
   internal:
+    # setup network shared between docker composers as this post:
+    # https://stackoverflow.com/questions/38088279/communication-between-multiple-docker-compose-projects      
+    name: service-internal-net
