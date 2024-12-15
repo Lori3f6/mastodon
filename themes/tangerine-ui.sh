@@ -3,7 +3,7 @@ echo "Setting up tanderine ui..."
 repo_folder=tmp/tangerine-ui
 mastodon_folder=mastodon_source
 
-git clone -b main --single-branch --depth=1 https://github.com/nileane/TangerineUI-for-Mastodon.git $repo_folder
+git clone -b v2.3 --single-branch --depth=1 https://github.com/nileane/TangerineUI-for-Mastodon.git $repo_folder
 
 cp -rv $repo_folder/mastodon/app/javascript/styles/* $mastodon_folder/app/javascript/styles
 
