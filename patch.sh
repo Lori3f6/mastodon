@@ -20,7 +20,7 @@ sed -i "s|MAX_CHARS = 500|MAX_CHARS = 2600|" mastodon_source/app/validators/stat
 # ref: https://github.com/mastodon/mastodon/commit/9bda93374093c738f1007922b2e8df58043c718f (#23726)
 
 # Edit 2024/12/15: we may still need to increase the limitation for image uploading
-sed -i "s|IMAGE_LIMIT = 16|IMAGE_LIMIT = 48|" /opt/mastodon/app/models/media_attachment.rb
+sed -i "s|IMAGE_LIMIT = 16|IMAGE_LIMIT = 48|" mastodon_source/app/models/media_attachment.rb
 
 # Poll options limit 4 -> 8:
 # the same as the max chars:
